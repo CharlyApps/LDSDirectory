@@ -18,20 +18,28 @@ Some comements I have regarding this functionality are as follows, we have few w
 ```swift 
 fetchRequest.predicate = NSPredicate(format: "id == %@", entity.id)
 ```
-3) Everytime make the API call and retrieve ALL the id's, then with the contains method for array check for each one if should proceed or skip
+2) Everytime make the API call and retrieve ALL the id's, then with the contains method for array check for each one if should proceed or skip
 ```swift 
 let idCoreDataArray = individuals.map { $0.id ?? 0 }
 idArray.contains(individual.id)
 ```
-5) Implement a refresh button, only when it gets tapped any of the previous scenarios can be triggered
+3) Implement a refresh button, only when it gets tapped any of the previous scenarios can be triggered
 
-##ProfileImageView.swift
+## ProfileImageView.swift
 This class was created in order to retrieve the image from the URL and assign a custom View into the ContentView element for image, however for the sake of the test i rather use the SDWebImageSwiftUI library that handles cache, still leave this class here just so we can take a look at the first approach
 
-##The force is strong with this one
+## The force is strong with this one
 Hold on! once a character from the list is selected, if the forceSensitive property is true, a small animation will appear before the character details are shown, it will notice if their force is dark side or light. For those characters with a false value, the details card will show immediately
 
-##Testing
+## Testing
 For this exercise i choose to create a few BDD UI Automation tests, for the Unit Tests, the helper class functions are being tested, for color, string and date values
 
-##Frameworks and Libraries
+## Frameworks and Libraries
+Developed using Xcode Version 14.0.1
+
+The library SDWebImageSwiftUI, licensed under the MIT License
+Copyright (c) 2019 lizhuoli1126@126.com <lizhuoli1126@126.com>
+
+The library CocoaPods, licensed under the MIT License
+Copyright (c) 2011 - 2012 Eloy Durán <eloy.de.enige@gmail.com>
+Copyright (c)        2012 Fabio Pelosin <fabiopelosin@gmail.com>
