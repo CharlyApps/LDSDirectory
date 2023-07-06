@@ -1,0 +1,6 @@
+framework module Pods_LDSDirectoryTests {
+  umbrella header "Pods-LDSDirectoryTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
