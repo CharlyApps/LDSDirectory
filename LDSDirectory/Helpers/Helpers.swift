@@ -34,12 +34,12 @@ func getForceType(affiliation: Affiliation) -> String {
     }
 }
 
-func formatDate(dateString: String) -> String? {
+func formatDate(dateString: String) -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd"
     if let date = dateFormatter.date(from: dateString) {
         dateFormatter.dateFormat = "MMMM, dd, yyyy"
         return dateFormatter.string(from: date)
     }
-    return nil
+    return "Jan, 01, 2000"
 }

@@ -13,12 +13,6 @@ class ViewModel: ObservableObject {
     @Published var individuals: [Individual] = []
     
     func fetchDirectory(context: NSManagedObjectContext) {
-        /* ENHANCEMENTS
-         Some comements I have regarding this function are, we have few ways to check wether we want or not to save the upcoming data, currently as long as we have data locally stored we are not going to pull anything else even if the contents of the web service are different than the ones contained in the local storage, we can talk about different solutions:
-         1) Everytime make the API call and SELECT from CoreData each of the results to validate if that object "id" exist and then proceed to save or skip
-         2) Everytime make the API call and retrieve ALL the id's, then with the contains method for array check for each one if should proceed or skip
-         3) Implement a refresh button, only when it gets tapped any of the previous scenarios can be triggered
-         */
         let fetchRequest: NSFetchRequest<IndividualEntity> = IndividualEntity.fetchRequest()
         let sortById = NSSortDescriptor(key: "id", ascending: true)
         fetchRequest.sortDescriptors = [sortById]

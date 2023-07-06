@@ -19,12 +19,34 @@ final class LDSDirectoryTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testAffiliationColors() throws {
+        let colorRed = getColor(affiliation: .sith)
+        XCTAssertEqual(colorRed, .red)
+        
+        let colorGreen = getColor(affiliation: .jedi)
+        XCTAssertEqual(colorGreen, .green)
+        
+        let colorBlue = getColor(affiliation: .rebel)
+        XCTAssertEqual(colorBlue, .blue)
+        
+        let colorOrange = getColor(affiliation: .empire)
+        XCTAssertEqual(colorOrange, .orange)
+        
     }
+    
+    func testFormatDate() throws {
+        let stringDate = "1977-05-25"
+        let formatedDate = formatDate(dateString: stringDate)
+        XCTAssertEqual(formatedDate, "May, 25, 1977")
+    }
+    
+    func testForceType() throws {
+        let forceTypeLight = getForceType(affiliation: .jedi)
+        XCTAssertEqual(forceTypeLight, "light side")
+        
+        let forceTypeDark = getForceType(affiliation: .sith)
+        XCTAssertEqual(forceTypeDark, "dark side")
+    }
+    
 
 }

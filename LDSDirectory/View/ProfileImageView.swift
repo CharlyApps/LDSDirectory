@@ -4,7 +4,7 @@
 //
 //  Created by Carlos Bastida on 7/5/23.
 //
-// This class was created in order to retrieve the image from the URL and assign a custom View into the ContentView element for image, however for good of the test i rather use a library SDWebImage that handles cache, still leave this class here just so we can take a look at the first approach
+// 
 import Foundation
 import SwiftUI
 

@@ -93,7 +93,7 @@ struct DetailView: View {
                             }
                             DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
                                 withAnimation(.easeInOut(duration: 1.0)){
-                                    forceText = "The \(forceSide) of the force was strong with \("\(individual.firstName ?? "") \(individual.lastName ?? "")")"
+                                    forceText = "The \(forceSide) of the force is strong with \("\(individual.firstName ?? "") \(individual.lastName ?? "")")"
                                 }
                                 withAnimation(.easeInOut(duration: 8.0)) {
                                     animateTheForce = true
